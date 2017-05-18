@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<queries>
+    <query id="1" category="HR">
+        <description>Gets all employess..</description>
+        <sql>
+            SELECT * FROM employees
+        </sql>
+    </query>
+    <query id="2" category="HR2">
+        <description>Gets all regions..</description>
+        <sql>
+            SELECT * FROM regions
+        </sql>
+    </query>
+</queries>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<categories>
+    <category id="1">
+        <name>HR</name>
+        <description>HR Category</description>
+    </category>
+    <category id="2">
+        <name>HR2</name>
+        <description>HR Category 2</description>
+    </category>
+</categories>
