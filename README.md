@@ -17,3 +17,8 @@ Spring 3, Lombok, JUnit, Apache Derby, Apache POI, JFree Chart, Slf4j
   <img src="swing.PNG" width="500"/>
 </p>
 
+#### Main form example
+
+<p align="center">
+  <img src="data-reporter.PNG" width="700"/>
+</p>
