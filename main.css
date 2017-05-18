@@ -1,0 +1,23 @@
+.main_style {
+        width: 524px;
+        padding-top: 8px;
+        padding-bottom: 15px;
+        border-radius: 15px;    
+        -moz-border-radius: 15px;    
+        -webkit-border-radius: 15px;
+        color: #446bb3;
+        padding:10px;
+        font-family: "Century Gothic";
+    }
+table { background-color : rgb(221, 221, 221); color : rgb(61, 61, 61); border-collapse: collapse; }
+thead { background-color: rgb(45, 137, 239); color :#fff; line-height:35px; font-size: 15px; text-align: left; }
+tbody tr:nth-child(even) { background: rgb(249, 249, 249) }
+tbody tr:nth-child(odd) { background: #FFF }
+tbody tr {font-size: 12px;}
+table td{
+border:1px solid rgb(221, 221, 221);
+padding:5px;
+}
+thead th{
+padding-left:10px;
+}
