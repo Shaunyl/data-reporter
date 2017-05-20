@@ -1,16 +1,16 @@
 package it.shaunyl.datareporter.login.ui;
 
+import it.tidalwave.role.ui.UserAction;
 import java.util.List;
-import javax.swing.Action;
+import lombok.NonNull;
 
 /**
  *
  * @author Filippo Testino
  */
-public interface LoginPresentation {
-
-    void bind(final Action connectAction, final Action newConnectionAction, final Action selectConnectionAction);
-
+public interface LoginPresentation {    
+    void bind(final @NonNull UserAction userConnectAction, final @NonNull UserAction userNewAction, final @NonNull UserAction userSelectAction);
+    
     void showUp();
     
     void addAllConnectionsToCombo(final List<String> connNames);
@@ -22,8 +22,6 @@ public interface LoginPresentation {
     String getPassword();
 
     void notifyFailedLogin(final String text);
-
-    String getUsername();
 
     String getConnectionName();
 }

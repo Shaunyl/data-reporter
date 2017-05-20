@@ -1,34 +1,41 @@
 package it.shaunyl.datareporter;
 
 import it.shaunyl.datareporter.login.ui.LoginPresentationControl;
-import java.awt.Color;
-import javax.swing.UIManager;
+import it.tidalwave.role.ContextManager;
+import it.tidalwave.role.spi.DefaultContextManagerProvider;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 /**
  * Entry point
  *
  */
 @Slf4j
 public class Main {
-    
-    private static final BeanFactory beanFactory;
 
-    static { 
-        beanFactory = new ClassPathXmlApplicationContext("/beans/Beans.xml");
-    }    
-    
-    public static void main(String[] args) {
+    private static final AbstractApplicationContext beanFactory;
 
-        UIManager.put("Label.foreground", new Color(81, 81, 81));
+    static {
         try {
-            javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
         } catch (Exception e) {
-            log.error("", e);
+            log.error(e.getMessage());
         }
-        LoginPresentationControl loginPresentationControl = beanFactory.getBean(LoginPresentationControl.class);
+        
+        ContextManager.Locator.set(new DefaultContextManagerProvider());
+        beanFactory = new ClassPathXmlApplicationContext("/beans/Beans.xml");
+        beanFactory.registerShutdownHook();
+        
+    }
+
+    public static void main(String[] args) {
+        LoginPresentationControl loginPresentationControl
+                = beanFactory.getBean(LoginPresentationControl.class);
         loginPresentationControl.login();
     }
 }

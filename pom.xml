@@ -207,12 +207,49 @@
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-util</artifactId>
-            <version>1.12.23</version>
+            <version>3.1-ALPHA-2</version>
         </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-role</artifactId>
+            <version>3.1-ALPHA-2</version>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-util-java8supplement</artifactId>
+            <version>3.1-ALPHA-2</version>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-role-spring</artifactId>
+            <version>3.1-ALPHA-2</version>
+        </dependency>
+<!--        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>thesefoolishthings</artifactId>
+            <version>3.0.3</version>
+        </dependency>-->
+        
+<!--        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>thesefoolishthings</artifactId>
+            <version>3.1-ALPHA-2</version>
+        </dependency>-->
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-util-lookup</artifactId>
             <scope>provided</scope>
         </dependency>
+<!--        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it.tidalwave.util</artifactId>
+            <version>1.10.33</version>
+        </dependency>-->
+<!--        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>thesefoolishthings</artifactId>
+            <version>1.35</version>
+            <type>pom</type>
+        </dependency>-->
     </dependencies>
 </project>

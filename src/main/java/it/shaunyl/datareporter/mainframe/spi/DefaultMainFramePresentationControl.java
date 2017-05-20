@@ -22,6 +22,7 @@ import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.spi.*;
 import it.tidalwave.util.Finder;
+import it.tidalwave.util.NotFoundException;
 import it.tidalwave.util.spi.FinderSupport;
 import java.awt.event.ActionEvent;
 import java.io.*;
@@ -29,6 +30,8 @@ import java.sql.*;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.*;
 import javax.inject.Inject;
 import javax.swing.*;
@@ -296,14 +299,14 @@ public class DefaultMainFramePresentationControl {
                             try (PreparedStatement preparedStatement = databaseManager.createPreparedStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
                                 @Cleanup
                                 ResultSet resultSet = preparedStatement.executeQuery();
-                                resultSet.absolute(firstResult + 1);
+                                resultSet.absolute(1);
                                 resultSet.relative(-1);
 
                                 final ResultSetMetaData metadata = resultSet.getMetaData();
                                 columns.set(resultSetManager.getColumnNames(metadata));
 
                                 final int columnCount = columns.get().length;
-                                int todo = maxResults;
+                                int todo = count();
 
                                 while (resultSet.next() && (todo-- > 0)) {
                                     PresentationModel[] pma = new PresentationModel[columnCount];
