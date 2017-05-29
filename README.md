@@ -9,7 +9,7 @@ You simply can save your connections in a local database
 The JTable fetch subset of data any time you scroll the bar to avoid memory problems  
 
 ### External dependencies
-Spring 3, Lombok, JUnit, Apache Derby, Apache POI, JFree Chart, Slf4j  
+Spring 3, Lombok, JUnit, Apache Derby, Apache POI, JFree Chart, Slf4j, thesefoolishthings (see Fabrizio Giudici)
 
 #### Login form example
 
